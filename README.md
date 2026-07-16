@@ -9,6 +9,7 @@ A collection of x86 assembly examples for learning OS development concepts.
 │   ├── interrupts.md        # BIOS interrupt reference
 │   └── registers.md         # Register usage guide
 ├── 01-hello-world/          # Basic bootloader
+│   └── boot.asm             # Minimal bootloader
 ├── 02-string-printing/      # String printing functions
 │   ├── boot.asm             # Main bootloader
 │   └── print.asm            # Reusable print routine
