@@ -1,45 +1,30 @@
-# OS Development Learning
+# os-dev
 
-A collection of x86 assembly examples for learning OS development concepts.
+x86 assembly bootloader examples for learning OS development.
 
-## Project Structure
+## Examples
 
-```
-├── docs/                    # Reference documentation
-│   ├── interrupts.md        # BIOS interrupt reference
-│   └── registers.md         # Register usage guide
-├── 01-hello-world/          # Basic bootloader
-│   └── boot.asm             # Minimal bootloader
-├── 02-string-printing/      # String printing functions
-│   ├── boot.asm             # Main bootloader
-│   └── print.asm            # Reusable print routine
-└── 03-disk-reading/         # Reading sectors from disk
-    ├── boot.asm             # Main bootloader
-    └── sector1.asm          # Data sector
+1. **01-hello-world** -- minimal bootloader, prints "Hello World"
+2. **02-string-printing** -- reusable print routine with string handling
+3. **03-disk-reading** -- BIOS interrupts and disk I/O
+
+## Build and run
+
+```bash
+cd 02-string-printing
+nasm -f bin boot.asm -o boot.bin
+qemu-system-i386 -fda boot.bin
 ```
 
 ## Prerequisites
 
-- NASM (Netwide Assembler)
-- QEMU or VirtualBox for testing
-
-## Building
-
-```bash
-# Example: Build the string printing example
-cd 02-string-printing
-nasm -f bin boot.asm -o boot.bin
-
-# Run in QEMU
-qemu-system-i386 -fda boot.bin
-```
-
-## Learning Path
-
-1. **01-hello-world** - Basic bootloader structure
-2. **02-string-printing** - Functions and string handling
-3. **03-disk-reading** - BIOS interrupts and disk I/O
+- NASM
+- QEMU or VirtualBox
 
 ## References
 
-- See `docs/` for register and interrupt documentation
+`docs/` has register usage and BIOS interrupt references.
+
+## License
+
+MIT
